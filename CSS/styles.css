@@ -1,0 +1,523 @@
+:root{
+    --azul_bajo:rgb(60, 195, 255);
+    --primario:#FF5B00;
+    --primario2: #990000;
+    --secundario:#FFF80A;
+    --white: rgb(232, 225, 225);
+    --secundario2:#FF1E1E;
+    --azul_medio: ;
+    --azul_fuerte: #270082 ;
+    --primary: #FFC107;
+    --grey: #757575;
+
+
+
+}
+/* GENERALIDADES */
+html{
+    font-size: 62.5%;/*Indica el porcentaje del tamaño original que se le aplicara a todo lo que tiene el html*/
+    box-sizing: border-box; /* Es para que el tamaño de la caja incluya el tamaño del border dentro del tamaño sin afacetar  a los elementos */
+    scroll-snap-type: y mandatory;/* Scroll-nap de arriba hacia abajo */
+
+
+}
+/* Propiedad obligatoria para que el contenido se muestre centrado y no mas cargado para un lado */
+*, *:before, *:after {/* El * es para aplicarlo a todos los elmentos */
+    box-sizing:inherit;
+  }
+
+body{
+    font-size: 16px;
+    font-family: 'Krub', sans-serif;
+    font-weight: 400;
+  /*   font-family: 'Montserrat',sans-serif; */
+  
+}
+header{
+    text-align: left;
+    font-size: 3rem;
+}
+a{
+    text-decoration: none;
+}
+.titulo span{/* Para especificar a que propiedad de la clase titulo le aplicaremos */
+  font-size:2rem;  
+}
+h1{
+    font-size: 4rem;
+}
+h2{
+    font-size: 3rem;
+/*     color:#54B435
+ */}
+h3{
+    font-size: 2rem;
+}
+h4{
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 1.3rem;
+}
+
+h1,h2,h3,h4{
+    text-align: center;
+    
+}
+label{
+    font-weight: bold;
+}
+/* REUTILIZABLES */
+.w-sm-100{
+    width: 100%;
+}
+@media (min-width: 760px) {
+    .w-sm-100{
+        width:auto;
+    }
+   
+}
+.flex{/* Para aplicar el display flex */
+    display: flex;
+}
+.aling-right{/* Para alinear al la derecha */
+    justify-content: flex-end;
+   
+}
+.contenedor{
+    max-width: 120rem;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+
+}
+.button-single{
+    width: 60%;/*Para   que abarque el 60% de la pagina bloque*/
+}
+
+.button{
+    text-align: center;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 1.5rem ;
+    margin-inline: 5px;
+    border-radius: 2rem;
+    border-color: var(--azul_fuerte);/* Color del el limite entre el boton y el borde*/
+    text-transform: uppercase;/* Para transformar la sletras a mayusculas */
+
+
+    outline-style:solid;/* Para establecer el tipo de borde el boton */
+    outline-color: var(--azul_fuerte);/* Para establecer el color del boode */
+    outline-offset: 0px;/* Para establecer lo separado que estara el margen del boton */
+    outline-width: 3px;/* Para determinar el ancho del borde */
+    /* outline: none; *//* Para quitar el borde del boton  le ponemos none*/
+
+} 
+.button-color{
+    background-color: #FF5B00;
+    color:white;
+    border-color: #FF5B00;
+    outline-color:#FF1E1E ;
+    border-style: none;
+    outline-offset: 3px;
+
+}
+.button-single:hover{
+    background-color: #FF1E1E;
+    color:#F4EAD5;
+    outline-color:#990000;
+
+    }
+.img2{
+    height: 10rem;
+    width: 10rem;/* 
+   text-decoration: none; */
+ /*   filter: invert(10%) sepia(80%) saturate(5000%) hue-rotate(5deg) brightness(107%) contrast(100%); */
+   
+    fill:#990000;
+    
+}
+
+.imgp{
+    fill: #FF1E1E;
+}
+.icon-map{
+    filter: invert(10%) sepia(80%) saturate(5000%) hue-rotate(5deg) brightness(107%) contrast(100%);
+    filter: color blue;
+    color:#FF5B00;
+    height: 10rem;
+    width: 10rem;
+}
+
+.imagenBox{
+height: 20rem;
+width: 20rem;
+color: #990000;
+fill: #FF5B00;
+filter: invert(10%) sepia(80%) saturate(5000%) hue-rotate(5deg) brightness(107%) contrast(100%);
+
+}
+
+
+
+
+/* Para determinar el ancho del borde */
+
+
+/* ENCABEZADO */
+
+.encabezado{
+    display: flex;
+    align-items:right;/* Para alinaralos a la izquierd horizontalmente row */
+    justify-content:center;/* Para establecer espacio entre ellos */
+    background-color: var(--primario);
+    border-radius: 1rem;/* Para redondear las esquinas del bloque ocupado */
+}
+.margen{
+    margin:1rem;
+}
+.fa-trophy{
+    color: var(--secundario);
+    font-size: 3rem;
+    align-content: flex-end;
+}
+.titulo{
+    font-weight: 700;
+    margin-left: 1rem;/* Indicar la separacion de el limite izquierdo */
+   /*  font-weight: 30rem; *//* Para la gordura de la letra */
+   /*  display: grid;
+    grid-auto-flow: column;Para alinearlo en forma horizontal
+    grid-auto-columns:max-content;Con esto siempre estaran grandes
+    gap: 0.2rem; */
+}
+.navegacion a{
+  color: white;
+  padding: 20px;
+  font-size: 1.5rem;
+  border-radius: 3px;
+}
+.menu{/* 
+    display: flex;
+    flex-direction: column; */
+    
+    margin-left: auto;
+    margin-right:2rem;/* Para aplicar un espacio de 2rem a hacia la derecha */
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;/* Para alinearlo en forma horizontal */
+    grid-auto-columns:max-content;/* Con esto siempre estaran grandes 
+    gap: 2rem; *//* Espacio de 2 rem entre los bloques */
+  /*  display:flex;
+    flex-direction: row;
+    justify-content: space-around;Para establecer espacio entre ellos
+    justify-items:right ;
+    align-content:space-between;
+    align-items: center; */   
+}
+
+.menu a:hover{
+    
+    background-color:var(--primario2) ;
+}
+@media (max-width: 768px){
+    .encabezado{
+        display: flex;
+        flex-direction: column;
+        padding:0rem;
+        border-radius: 3px;
+    }
+   /*  .titulo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    } */
+    .menu{
+        display:flex;
+        flex-direction: column;
+        margin-left:0;
+        margin-right: 0;
+    }
+    .navegacion a{
+        padding: 10px;
+    }
+   
+
+}
+@media (min-width: 768px){
+    .button-single{
+        width: auto;
+    }
+    
+      
+}
+
+
+/* IMAGEN BOXEADOR */
+.boxeador{
+    background-image: url(https://th.bing.com/th/id/R.5e5b5c6dc64faa0d75bb3879a9f40793?rik=5QCKHzCTLO4GPg&pid=ImgRaw&r=0);/* Para poner una imagen de fondo */
+    background-repeat: no-repeat;/* Para no repetir la imagen */
+    background-size: cover;/* Para que el tamaño de la imagen cubra todo el ancho disponible */
+    height: 70rem;
+    margin-top: 3rem;
+
+    
+/*     padding: 2rem;/*   el marco que tendra hacia arriba y  abajo */
+    position:relative ;/*Posicion relativa para el contenedor padre*/
+    margin-bottom: 2rem;/* Para separar el siguiente contenedor de este */
+    
+   
+}
+.boxeador-contenido{
+    position:absolute;/* Para que el hijo pueda aplicar propiedades especificas */
+    background-color: rgba(0,0,0,.5);/*rgba para aplicar un color y el nivel de transparencia que tiene*/
+    background-color: rgb(0 0 0/70%);/*Es nuevo metodo para aplicar trasparencia*/
+    width:100%;/*Abarca el 100% de ancho*/
+    height: 100%;/* Abarcsa el 100% de altura */
+
+    display: flex;/* Colocar los elemento de izquierda a derecha */
+    flex-direction: column;/* Colocarlos de arriba hacia abajo */
+    align-items: center;/* Alinardlos al centro */
+    justify-content: center;/* Justificarlos al centrp del bloque */
+
+}
+.icono-ubicacion{
+    filter: invert(100%) sepia(62%) saturate(6680%) hue-rotate(357deg) brightness(109%) contrast(108%);
+    width: auto;
+    height: 15rem;
+}
+.ubicacion p{
+    font-size: 1.5rem;
+    color: white;
+    margin: 1rem 2rem;
+
+}
+.boxeador-contenido span{
+    font-size: 2rem;
+}
+.boxeador-contenido h2{
+    color:white;
+}
+
+
+
+
+
+/* PRINCIPAL */
+.principal{
+    background-color: #F4EAD5;
+    padding: 2rem; /*Para que el bloque  tenga en su interior 2 rem de separado de su texto interior*/
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    /*  display:flex;
+    flex-direction: column;
+    align-items: center;  */
+
+}
+/* IMAGENES DE BOX */
+@media (max-width:768px){
+   .box{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(4,1fr);
+    column-gap: 1rem;
+    align-items: center;
+   }
+  
+    
+}
+@media (min-width: 768px){
+    .box{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(2,1fr);
+        column-gap: 1rem;
+        align-items: center;
+    }
+   
+}
+
+.img-box{
+    margin-top: 1rem;
+    border-radius: 1rem; 
+    width: 100%;
+    
+}
+
+/* NIVELES DE BOX */
+h3 span{
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px){
+        
+    .niveles{
+        display: grid;
+        grid-template-columns:repeat(3,1fr);/* Para dividir lo que esta dentro en 3 secciones */
+        column-gap:  2rem;      
+    }
+
+}
+.nivel{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+.img1,
+.img2,
+.img3{
+    width: 80%;
+    height: 80%;
+}
+.subtitulo{
+    color: var(--secundario2);
+    font-size:2.5rem;
+}
+.space-icon{
+    width: 15rem;
+    height: 15rem;
+    background-color: #7DCE13;
+    border-radius: 10rem;
+    display: flex;
+    align-items: center;/* Alineacion vertical al centro */
+    justify-content: center; /*Alineacion horizontal al centro*/
+   border-color: var(--secundario2);
+   border-style: solid;
+
+}
+
+.precio{
+    color: var(--azul_fuerte);
+}
+.mes{
+    color:#FF1E1E
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.buttons button:hover{
+    color: white;
+    
+}
+.but-inscribirme{
+    background-color:#FFBF00;
+    text-transform: none;
+    
+}
+.but-informacion{
+    background-color:var(--azul_bajo);
+    text-transform: none;
+}
+.but1  button:hover{
+background-color: #FF1E1E;
+}
+.but2  button:hover{
+background-color: #54B435;
+}
+
+/* FORMULARIO */
+
+
+
+
+
+
+
+
+
+
+
+
+/*CONTACTO */
+.formulario{
+    background-color: var(--grey);
+    width: min(60rem, 100%);/* Utilizar el valor mas pequeño 6orem  o 100% para asignarle el ancho a este formmulario d*/
+    margin:0 auto;/* Utilizarlo cuando es un elemento de tipo block y su padre no es display flex */
+    padding: 1rem;/* Espacio que se aplica en su interior */
+    border-radius: 2rem;
+
+}
+.formulario fieldset{/* PropiedAD DE */
+border: none;
+
+}
+.formulario legend{
+    text-align: center;
+    color: var(--primary);/* Asignamos color primario a la fuente */
+    font-weight: 700;/* Negritas bold */
+    font-size: 1.8rem;/* Tamaño */
+    text-transform: uppercase;/* Transformar en mayusculas */
+    margin-bottom: 2rem;/* Que separe el elemnto siguiente de abajo */
+
+}
+.formulario h5{
+    color:var(--white);
+}
+@media (min-width: 760px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);/* Crear dos columnas con una fraccion cada una */
+        grid-template-rows: auto auto auto 20rem 6rem;
+        column-gap: 1rem;/* Para  hacer la separación de columnas */
+
+    }
+    .campo:nth-child(3),
+    .text-area
+    {/* Seleccionamos la clase campo numero 3 */
+    grid-column:1/3;/* indicamos abarcara de la linea 1 a la 3-*/
+    width: 104%;    
+    }
+}
+
+.contenedor-campos{
+
+}
+.campo{
+
+}
+
+.campo label{
+    color:var(--white);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: block;/* Para separarlos por bloques */
+}
+/* .campo input[Type="text"]{/*  Es para aplicarle caraceristiccas a un input cuyo tipo sea text*/
+.campo textarea{
+    height: 18rem;
+}  
+.input-text{
+    border-radius: 0.5rem;
+    border:none;
+    width:85%;
+    padding: 1.5rem;
+}
+.campo:nth-child(3),
+    .text-area
+    {/* Seleccionamos la clase campo numero 3 */
+    /* indicamos abarcara de la linea 1 a la 3-*/
+    }
+
+/* FOOTER */
+.footer{
+    text-align: center;
+}
+
+div .campo{
+    margin: 1rem;
+}
+
+.niveles, .encabezado , .boxeador, .boxx, .formulario{
+    scroll-snap-align: center; /* Para indicar el centro como posicion de ajuste */
+    scroll-snap-stop:always;/* Siempre se pare */
+}
